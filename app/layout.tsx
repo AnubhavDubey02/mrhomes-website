@@ -1,0 +1,34 @@
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter, Cormorant_Garamond } from 'next/font/google';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { WhatsAppFloat } from '@/components/lead/WhatsAppFloat';
+import { SITE } from '@/lib/seo';
+
+const sans = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const display = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+  title: { default: `${SITE.name} — ${SITE.tagline}`, template: `%s — ${SITE.name}` },
+  description: 'A boutique advisory for buying, selling and renting premium homes in Gurgaon.',
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${sans.variable} ${display.variable}`}>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <WhatsAppFloat />
+      </body>
+    </html>
+  );
+}

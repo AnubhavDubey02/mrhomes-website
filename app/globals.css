@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Mr Homes Realtors — Design System Tokens
+   Brand: Luxury through minimalism.
+------------------------------------------------------------------ */
+:root {
+  /* Color — restrained, warm neutrals. No gold. */
+  --ink: #14130F;          /* primary text, near-black warm */
+  --paper: #F6F3EC;        /* primary background, warm off-white */
+  --bone: #ECE6D9;         /* secondary surface */
+  --stone: #8C7E66;        /* reserved accent — muted warm taupe, used very sparingly */
+  --muted: #6F6B62;        /* secondary text */
+  --line: rgba(20, 19, 15, 0.08);
+
+  /* Type */
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Motion */
+  --ease-editorial: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 200ms;
+  --dur: 400ms;
+  --dur-slow: 700ms;
+
+  /* Layout */
+  --radius: 2px;
+  --section-y: clamp(4rem, 8vw, 9rem);
+}
+
+@layer base {
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400; /* serif looks heavier; keep regular */
+    color: var(--ink);
+  }
+  ::selection { background: var(--ink); color: var(--paper); }
+  a { color: inherit; text-decoration: none; }
+  hr { border: 0; border-top: 1px solid var(--line); }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .rule { height: 1px; background: var(--line); width: 100%; }
+  .hairline { border: 1px solid var(--line); }
+
+  /* Primary button — minimal, no shadow */
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.625rem;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem; letter-spacing: 0.04em;
+    border-radius: var(--radius);
+    transition: background var(--dur) var(--ease-editorial),
+                color var(--dur) var(--ease-editorial),
+                transform var(--dur) var(--ease-editorial);
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: #1c1c19; }
+  .btn-ghost { color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  /* Editorial link with underline draw */
+  .link {
+    position: relative; padding-bottom: 2px;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px; background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size var(--dur) var(--ease-editorial);
+  }
+  .link:hover { background-size: 0% 1px; background-position: 100% 100%; }
+}
+
+/* Subtle editorial entrance — used very sparingly on the hero only */
+@keyframes editorial-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-rise { animation: editorial-rise 700ms var(--ease-editorial) both; }
+.animate-rise-1 { animation-delay: 80ms; }
+.animate-rise-2 { animation-delay: 160ms; }
+.animate-rise-3 { animation-delay: 240ms; }
+.animate-rise-4 { animation-delay: 320ms; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
