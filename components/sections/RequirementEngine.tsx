@@ -161,7 +161,7 @@ export function RequirementEngine() {
                 index={visibleIndex(flow, 3)}
                 prompt={budgetPrompt(answers)}
               >
-                <TileGrid cols={1} md={6}>
+                <TileGrid cols={1} md={3}>
                   {budgetLabelsFor({
                     intent: answers.intent,
                     type: budgetTypeKey(answers.type),
@@ -436,8 +436,10 @@ function TileGrid({
     'grid gap-3 md:gap-4',
     cols === 1 && 'grid-cols-1',
     cols === 2 && 'grid-cols-2',
+    md === 3 && 'md:grid-cols-3',
     md === 4 && 'md:grid-cols-4',
     md === 5 && 'md:grid-cols-5',
+    md === 6 && 'md:grid-cols-6',
   );
   return <div className={grid}>{children}</div>;
 }
@@ -524,7 +526,7 @@ function Footer({
       <button
         type="button"
         onClick={onBack}
-        className="inline-flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors"
+        className="inline-flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors min-h-[44px] px-1"
       >
         <ArrowLeft className="w-4 h-4" strokeWidth={1.25} />
         Back

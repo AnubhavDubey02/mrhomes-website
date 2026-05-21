@@ -42,6 +42,7 @@
     font-size: 16px;
     line-height: 1.6;
     font-weight: 400;
+    overflow-x: hidden; /* prevent horizontal bleed from any full-width sections */
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
@@ -69,6 +70,7 @@
   .btn {
     display: inline-flex; align-items: center; gap: 0.625rem;
     padding: 0.875rem 1.5rem;
+    min-height: 44px; /* WCAG touch target */
     font-size: 0.875rem; letter-spacing: 0.04em;
     border-radius: var(--radius);
     transition: background var(--dur) var(--ease-editorial),
@@ -101,6 +103,21 @@
 .animate-rise-2 { animation-delay: 160ms; }
 .animate-rise-3 { animation-delay: 240ms; }
 .animate-rise-4 { animation-delay: 320ms; }
+
+/* ---------- floating WhatsApp button ----------
+   Hidden (opacity + pointer-events) while the mobile nav is open to avoid
+   overlap with the full-screen menu's own WhatsApp CTA. The body class
+   'nav-open' is toggled in Header.tsx. Using opacity ensures no layout
+   shift; pointer-events: none prevents accidental taps during the hide. */
+body.nav-open .wa-float {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Safe-area bottom clearance for notched / home-indicator phones */
+.wa-float {
+  bottom: calc(1.25rem + env(safe-area-inset-bottom));
+}
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {

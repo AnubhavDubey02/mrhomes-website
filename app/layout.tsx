@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: { default: `${SITE.name} — ${SITE.tagline}`, template: `%s — ${SITE.name}` },
   description: 'A boutique advisory for buying, selling and renting premium homes in Gurgaon.',
+  viewport: 'width=device-width, initial-scale=1',
+  themeColor: '#F6F3EC',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

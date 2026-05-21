@@ -116,7 +116,7 @@ export function SmartSearch() {
 
             <button
               type="submit"
-              className="btn btn-primary rounded-none h-full px-8 py-6 md:py-0 md:min-h-[5.5rem] justify-center tracking-[0.08em] uppercase text-xs"
+              className="btn btn-primary rounded-none w-full lg:w-auto min-h-[3.5rem] lg:h-full px-8 py-6 md:py-0 lg:min-h-[5.5rem] justify-center tracking-[0.08em] uppercase text-xs"
             >
               Search
             </button>
