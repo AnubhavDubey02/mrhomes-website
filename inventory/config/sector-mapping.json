@@ -1,0 +1,153 @@
+{
+  "_comment": "Canonical sector names for Gurgaon. Maps raw OCR variants to a single canonical label used throughout the pipeline.",
+
+  "sectors": {
+    "Sector 42": {
+      "canonical": "Sector 42",
+      "aliases": ["sec 42", "sec-42", "s42", "sector42"],
+      "area_slug": "golf-course-road",
+      "pin": "122002"
+    },
+    "Sector 43": {
+      "canonical": "Sector 43",
+      "aliases": ["sec 43", "sec-43", "s43", "sector43"],
+      "area_slug": "golf-course-road",
+      "pin": "122002"
+    },
+    "Sector 54": {
+      "canonical": "Sector 54",
+      "aliases": ["sec 54", "sec-54", "s54", "sector54"],
+      "area_slug": "golf-course-extension-road",
+      "pin": "122011"
+    },
+    "Sector 55": {
+      "canonical": "Sector 55",
+      "aliases": ["sec 55", "sec-55", "s55", "sector55"],
+      "area_slug": "golf-course-extension-road",
+      "pin": "122011"
+    },
+    "Sector 56": {
+      "canonical": "Sector 56",
+      "aliases": ["sec 56", "sec-56", "s56", "sector56"],
+      "area_slug": "golf-course-extension-road",
+      "pin": "122011"
+    },
+    "Sector 57": {
+      "canonical": "Sector 57",
+      "aliases": ["sec 57", "sec-57", "s57", "sector57"],
+      "area_slug": "golf-course-extension-road",
+      "pin": "122003"
+    },
+    "Sector 58": {
+      "canonical": "Sector 58",
+      "aliases": ["sec 58", "sec-58", "s58", "sector58"],
+      "area_slug": "golf-course-extension-road",
+      "pin": "122011"
+    },
+    "Sector 63": {
+      "canonical": "Sector 63",
+      "aliases": ["sec 63", "sec-63", "s63", "sector63"],
+      "area_slug": "sohna-road",
+      "pin": "122101"
+    },
+    "Sector 65": {
+      "canonical": "Sector 65",
+      "aliases": ["sec 65", "sec-65", "s65", "sector65"],
+      "area_slug": "sohna-road",
+      "pin": "122101"
+    },
+    "Sector 67": {
+      "canonical": "Sector 67",
+      "aliases": ["sec 67", "sec-67", "s67", "sector67"],
+      "area_slug": "sohna-road",
+      "pin": "122101"
+    },
+    "Sector 68": {
+      "canonical": "Sector 68",
+      "aliases": ["sec 68", "sec-68", "s68", "sector68"],
+      "area_slug": "sohna-road",
+      "pin": "122101"
+    },
+    "DLF Phase 1": {
+      "canonical": "DLF Phase 1",
+      "aliases": ["dlf 1", "dlf ph 1", "dlf phase i", "dlf ph1"],
+      "area_slug": "dlf-phases",
+      "pin": "122002"
+    },
+    "DLF Phase 2": {
+      "canonical": "DLF Phase 2",
+      "aliases": ["dlf 2", "dlf ph 2", "dlf phase ii", "dlf ph2"],
+      "area_slug": "dlf-phases",
+      "pin": "122002"
+    },
+    "DLF Phase 3": {
+      "canonical": "DLF Phase 3",
+      "aliases": ["dlf 3", "dlf ph 3", "dlf phase iii", "dlf ph3"],
+      "area_slug": "dlf-phases",
+      "pin": "122002"
+    },
+    "DLF Phase 4": {
+      "canonical": "DLF Phase 4",
+      "aliases": ["dlf 4", "dlf ph 4", "dlf phase iv", "dlf ph4"],
+      "area_slug": "dlf-phases",
+      "pin": "122009"
+    },
+    "DLF Phase 5": {
+      "canonical": "DLF Phase 5",
+      "aliases": ["dlf 5", "dlf ph 5", "dlf phase v", "dlf ph5"],
+      "area_slug": "dlf-phases",
+      "pin": "122009"
+    },
+    "Nirvana Country": {
+      "canonical": "Nirvana Country",
+      "aliases": ["nirvana", "nirvana cntry", "ncc"],
+      "area_slug": "golf-course-extension-road",
+      "pin": "122018"
+    },
+    "South City 1": {
+      "canonical": "South City 1",
+      "aliases": ["sc1", "south city1", "south city i"],
+      "area_slug": "nh-48",
+      "pin": "122001"
+    },
+    "South City 2": {
+      "canonical": "South City 2",
+      "aliases": ["sc2", "south city2", "south city ii"],
+      "area_slug": "sohna-road",
+      "pin": "122018"
+    },
+    "Sushant Lok 1": {
+      "canonical": "Sushant Lok 1",
+      "aliases": ["sl1", "sushant lok i", "sushant lok phase 1"],
+      "area_slug": "nh-48",
+      "pin": "122001"
+    },
+    "Sushant Lok 2": {
+      "canonical": "Sushant Lok 2",
+      "aliases": ["sl2", "sushant lok ii", "sushant lok phase 2"],
+      "area_slug": "nh-48",
+      "pin": "122009"
+    },
+    "Sushant Lok 3": {
+      "canonical": "Sushant Lok 3",
+      "aliases": ["sl3", "sushant lok iii", "sushant lok phase 3"],
+      "area_slug": "nh-48",
+      "pin": "122009"
+    },
+    "Palam Vihar": {
+      "canonical": "Palam Vihar",
+      "aliases": ["palam vihar", "palam", "pv"],
+      "area_slug": "palam-vihar",
+      "pin": "122017"
+    }
+  },
+
+  "area_groups": {
+    "golf-course-road":           ["Sector 42", "Sector 43"],
+    "golf-course-extension-road": ["Sector 54", "Sector 55", "Sector 56", "Sector 57", "Sector 58", "Nirvana Country"],
+    "sohna-road":                 ["Sector 63", "Sector 65", "Sector 67", "Sector 68", "South City 2"],
+    "dlf-phases":                 ["DLF Phase 1", "DLF Phase 2", "DLF Phase 3", "DLF Phase 4", "DLF Phase 5"],
+    "nh-48":                      ["South City 1", "Sushant Lok 1", "Sushant Lok 2", "Sushant Lok 3"],
+    "palam-vihar":                ["Palam Vihar"]
+  }
+}

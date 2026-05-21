@@ -27,7 +27,7 @@
 
   /* Layout */
   --radius: 2px;
-  --section-y: clamp(4rem, 8vw, 9rem);
+  --section-y: clamp(3.25rem, 6.5vw, 7.25rem);
 }
 
 @layer base {

@@ -235,7 +235,21 @@ export function whatsappFromFilters(f: PropertyFilters): string {
  */
 export function filterProperties(f: PropertyFilters): Property[] {
   return PROPERTIES.filter((p) => {
+    if (f.intent && p.intent !== f.intent) return false;
     if (f.area && p.locationSlug !== f.area.slug) return false;
+    if (f.apartmentType && p.category !== f.apartmentType.value.replace('-', '')) {
+      return false;
+    }
+    if (f.type?.value === '1-rk' && p.category !== '1rk') return false;
+    if (f.type?.value === 'pre-occupied-room' && p.category !== 'pre-occupied-rooms') {
+      return false;
+    }
+    if (f.type?.value === 'independent-villa' && !['villas', 'villas-airbnb'].includes(p.category)) {
+      return false;
+    }
+    if (f.type?.value === 'builder-floor' && p.category !== 'builder-floors') return false;
+    if (f.type?.value === 'plot' && p.category !== 'plots') return false;
+    if (f.type?.value === 'commercial' && p.category !== 'commercial') return false;
     return true;
   });
 }

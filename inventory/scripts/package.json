@@ -1,0 +1,23 @@
+{
+  "name": "mr-homes-inventory-pipeline",
+  "version": "1.0.0",
+  "description": "OCR extraction, normalisation, deduplication and export pipeline for Mr Homes Realtors inventory.",
+  "type": "module",
+  "engines": { "node": ">=18.0.0" },
+  "scripts": {
+    "extract":   "node extract.mjs",
+    "normalise": "node normalise.mjs",
+    "export":    "node export.mjs",
+    "pipeline":  "node pipeline.mjs",
+    "pipeline:extract":   "node pipeline.mjs --step extract",
+    "pipeline:normalise": "node pipeline.mjs --step normalise",
+    "pipeline:export":    "node pipeline.mjs --step export"
+  },
+  "dependencies": {
+    "sharp":        "^0.33.4",
+    "tesseract.js": "^5.1.1",
+    "openai":       "^4.56.0",
+    "exceljs":      "^4.4.0",
+    "dotenv":       "^16.4.5"
+  }
+}

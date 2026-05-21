@@ -1,0 +1,21 @@
+| StNo | Sector | RoomNo | PropertyNo | DateOfvacating | Type | Rent
+17
+| 2 | sees2 | a | 1787 | immediately |[ Preoccupied | 21K
+| 3 | sees2 | 203 | 1787 | immediately | Preoccupied | 21K
+| a | ser | 208 | 552 | immediately [| Rk [| as
+| 5s |  sees2 | a2 | 579 | immediately | 28K [| a7
+| 6 | osecmn | 3m | m3 | immediately | 28k | ax
+| 7 | secs | aon | 1366 | immediately [| 28K [| ax
+| 8 | phases | 1 | 57 | immediately [ 18HK [| 2K
+| 9 | phases | 2 | 57 | immediately [ 18k [| 2s
+| 10 | phases | 102 | 57 | immediately | 18wk [| 2s
+| 11 | phases | 20 | 57 | immediately | 18k [| 2s
+37K
+| 13 | seca | 304 | an | immediately [| 18K [| 3%
+40K
+| 15 |  secao | 403 | 132 | immediately [ 18K [| ask
+| 16 | secs | 8 | 175 | immediately [ 28HK [| sx
+35K
+| 18 |  seest | 204 | N70 | immediately [| Rk [| ask
+| 19 | southcity2 | 3s | E33 | immediately | Rk | ax
+[20 | southcity2 | 104 | E33 | Immediately |  1RK | 22K

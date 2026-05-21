@@ -8,12 +8,10 @@ import { whatsappLink, waMessages } from '@/lib/whatsapp';
 
 type NavItem = { href: string; label: string; external?: boolean };
 
-// Buy / Rent / Commercial map to /properties with an `intent` query param.
-// Filtering is wired in a later phase; the routes are stable today.
 const NAV: NavItem[] = [
-  { href: '/properties?intent=buy', label: 'Buy' },
-  { href: '/properties?intent=rent', label: 'Rent' },
-  { href: '/properties?intent=commercial', label: 'Commercial' },
+  { href: '/buy', label: 'Buy' },
+  { href: '/rent', label: 'Rent' },
+  { href: '/commercial', label: 'Commercial' },
   { href: '/#areas', label: 'Areas' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },

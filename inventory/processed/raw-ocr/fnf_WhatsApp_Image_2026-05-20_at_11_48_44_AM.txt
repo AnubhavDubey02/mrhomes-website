@@ -1,0 +1,27 @@
+S No. Notice Mode Sector Property No Room no Vacated date Type Rent
+1 | Rent Ok Sec 15 810 103 Immidiately 2BHK 55K
+2 | Rent Ok Sec 38 874 301 Immidiately 1BHK | 35K
+3 Rent Ok Sec 39 149 303 Immidiately 1RK | 14K
+4 | Rent Ok Sec 39 149 103 Immidiately 1RK | 14K
+5 Rent Ok Sec 39 149 406 Immidiately 1RK | 14K
+6 Rent Ok Sec 39 755 501 Immidiately 1BHK 35K
+7 Rent Ok Sec 39 755 504 Immidiately 1BHK 35K
+8 Rent Ok Sec 40 13 103 Immidiately 2BHK 40K
+9 Rent Ok Sec 43 EZ 102 Immidiately 2BHK 45K
+10 Rent Ok Sec 43 1301P G005 Immidiately 1RK 25K
+11 | Rent Ok Sec 45 767 104 Immidiately 1BHK 35K
+12 Rent Ok Sec 45 767 404 Immidiately 1BHK 35K
+13 Rent Ok Sec 45 767 205 Immidiately 1BHK 35K
+14 Rent Ok Sec 52 675 B002 Immidiately 1BHK 25k
+15 | Rent Ok Sec 53 D2/8 G001 Immidiately 2BHK 45k
+16 Rent Ok Sec 55 107 103 Immidiately 1BHK 40K
+17 | Rent Ok Sec 51 1222 G002 Immidiately 1BHK 38K
+18 Rent Ok Sec 51 1222 101 Immidiately 1BHK 38K
+19 Rent Ok 103 Immidiately 1BHK 38K
+
+20 Rent Ok Sec 51 1222 102 Immidiately 1BHK 38K
+21 Rent Ok 203 Immidiately 1BHK 38K
+22 | Rent Ok 301 Immidiately 1BHK 38K
+23 Rent Ok 302 Immidiately 1BHK 38K
+24 Rent Ok 402 Immidiately 1BHK 38K
+25 Rent Ok 502 Immidiately 1BHK 35K

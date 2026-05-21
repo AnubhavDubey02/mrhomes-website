@@ -1,0 +1,52 @@
+{
+  "_comment": "Conflict resolution convention: LOWER priority number = HIGHER authority. When the same property appears in multiple sources, the source with priority=1 wins on conflicting fields.",
+  "_business_rule": "DORE > FNF > S2L > Local Brokers  (DORE has richest metadata → rank 1)",
+
+  "sources": [
+    {
+      "id": "dore",
+      "label": "Dore",
+      "priority": 1,
+      "raw_folder": "raw/dore",
+      "trust_level": "high",
+      "notes": "Primary source. Richest metadata — rents, availability dates, furnishing detail. Authoritative for most fields."
+    },
+    {
+      "id": "fnf",
+      "label": "Fully Furnished & Fitted",
+      "priority": 2,
+      "raw_folder": "raw/fnf",
+      "trust_level": "high",
+      "notes": "Specialist luxury channel. Furnishing status and FnF classification are authoritative from this source."
+    },
+    {
+      "id": "s2l",
+      "label": "Sell2Live",
+      "priority": 3,
+      "raw_folder": "raw/s2l",
+      "trust_level": "medium",
+      "notes": "Aggregated platform feed. Price and area figures are cross-check references; defer to dore on conflicts."
+    },
+    {
+      "id": "local-brokers",
+      "label": "Local Brokers",
+      "priority": 4,
+      "raw_folder": "raw/local-brokers",
+      "trust_level": "low",
+      "notes": "WhatsApp forwards from individual brokers. All records require manual review before promotion to master."
+    }
+  ],
+
+  "field_overrides": {
+    "_comment": "Per-field source overrides that supersede the global priority order.",
+    "furnishing":  "fnf",
+    "photos":      "local-brokers"
+  },
+
+  "deduplication": {
+    "_comment": "Composite key used to detect duplicate records across sources.",
+    "match_on": ["Source_Property_Ref", "Source_Room_No", "Property_Type", "Sector"],
+    "cross_source_soft_match": ["Sector", "Property_Type", "Floor", "Furnishing"],
+    "rent_tolerance_pct": 5
+  }
+}

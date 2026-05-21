@@ -7,8 +7,9 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="wa-float fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-3 text-sm tracking-wide transition-[transform,opacity] duration-300 ease-editorial hover:-translate-y-0.5"
+      className="wa-float fixed bottom-5 right-5 z-50 inline-flex items-center gap-3 border border-line bg-paper/90 text-ink backdrop-blur px-4 py-3 text-sm tracking-wide transition-[transform,opacity,border-color] duration-300 ease-editorial hover:-translate-y-0.5 hover:border-ink"
     >
+      <span aria-hidden className="h-2 w-2 rounded-full bg-ink" />
       WhatsApp
     </a>
   );

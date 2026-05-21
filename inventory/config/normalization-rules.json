@@ -1,0 +1,73 @@
+{
+  "_comment": "Rules for normalising raw inventory fields into canonical form.",
+
+  "bhk": {
+    "aliases": {
+      "1 BHK": ["1bhk", "1 bhk", "1-bhk", "one bhk", "1 bedroom"],
+      "2 BHK": ["2bhk", "2 bhk", "2-bhk", "two bhk", "2 bedroom"],
+      "3 BHK": ["3bhk", "3 bhk", "3-bhk", "three bhk", "3 bedroom"],
+      "4 BHK": ["4bhk", "4 bhk", "4-bhk", "four bhk", "4 bedroom"],
+      "5 BHK": ["5bhk", "5 bhk", "5-bhk", "five bhk", "5 bedroom"],
+      "Studio": ["studio", "studio apt", "studio apartment"],
+      "Penthouse": ["ph", "penthouse", "pent house"],
+      "Villa": ["villa", "independent villa", "ind villa"],
+      "Plot": ["plot", "residential plot", "res plot"]
+    }
+  },
+
+  "area": {
+    "canonical_unit": "sq ft",
+    "conversions": {
+      "sq ft":  1,
+      "sqft":   1,
+      "sft":    1,
+      "sq.ft":  1,
+      "sq yard": 9,
+      "sq yd":   9,
+      "gaj":     9,
+      "sq m":    10.764,
+      "sqm":     10.764
+    }
+  },
+
+  "price": {
+    "canonical_unit": "INR",
+    "multipliers": {
+      "L":     100000,
+      "Lac":   100000,
+      "Lakh":  100000,
+      "Lakhs": 100000,
+      "Cr":    10000000,
+      "Cr.":   10000000,
+      "Crore": 10000000,
+      "Crores":10000000,
+      "K":     1000
+    },
+    "strip_chars": ["₹", ",", " ", "/-"]
+  },
+
+  "furnishing": {
+    "aliases": {
+      "Unfurnished":       ["unfurnished", "unf", "bare shell", "bare"],
+      "Semi-Furnished":    ["semi furnished", "semi", "sf", "semi-furnished", "partly furnished"],
+      "Fully Furnished":   ["fully furnished", "ff", "furnished", "full furnished", "fully-furnished"],
+      "Fully Furnished & Fitted": ["fff", "fnf", "fully furnished and fitted", "f&f"]
+    }
+  },
+
+  "status": {
+    "aliases": {
+      "Ready to Move": ["rtm", "ready to move", "ready", "possession ready", "immediate possession"],
+      "Under Construction": ["uc", "under construction", "u/c", "upcoming"],
+      "New Launch": ["new launch", "launch", "pre-launch", "pre launch"]
+    }
+  },
+
+  "transaction_type": {
+    "aliases": {
+      "Sale":   ["sale", "sell", "for sale", "resale"],
+      "Rent":   ["rent", "rental", "lease", "for rent", "on rent"],
+      "Lease":  ["long lease", "long-term lease"]
+    }
+  }
+}

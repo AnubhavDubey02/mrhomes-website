@@ -1,0 +1,109 @@
+[2026-05-21T13:49:27.768Z] === EXTRACT STEP START ===
+[2026-05-21T13:49:27.771Z] Run ID: RUN-20260521-191927
+[2026-05-21T13:49:27.772Z] [dore] Found 1 image(s).
+[2026-05-21T13:49:27.774Z] [dore] Processing: dore\WhatsApp Image 2026-05-21 at 10.03.44 AM.jpeg
+[2026-05-21T13:49:32.739Z] [dore] Extracted 20 record(s) from dore\WhatsApp Image 2026-05-21 at 10.03.44 AM.jpeg
+[2026-05-21T13:49:32.742Z] [fnf] Found 2 image(s).
+[2026-05-21T13:49:32.744Z] [fnf] Processing: fnf\WhatsApp Image 2026-05-20 at 11.48.44 AM.jpeg
+[2026-05-21T13:49:35.508Z] [fnf] Extracted 13 record(s) from fnf\WhatsApp Image 2026-05-20 at 11.48.44 AM.jpeg
+[2026-05-21T13:49:35.511Z] [fnf] Processing: fnf\WhatsApp Image 2026-05-20 at 11.48.45 AM.jpeg
+[2026-05-21T13:49:36.551Z] [fnf] Extracted 0 record(s) from fnf\WhatsApp Image 2026-05-20 at 11.48.45 AM.jpeg
+[2026-05-21T13:49:36.554Z] [s2l] Found 2 image(s).
+[2026-05-21T13:49:36.556Z] [s2l] Processing: s2l\WhatsApp Image 2026-05-21 at 11.52.45 AM.jpeg
+[2026-05-21T13:49:37.683Z] [s2l] Extracted 0 record(s) from s2l\WhatsApp Image 2026-05-21 at 11.52.45 AM.jpeg
+[2026-05-21T13:49:37.685Z] [s2l] Processing: s2l\WhatsApp Image 2026-05-21 at 12.06.13 PM.jpeg
+[2026-05-21T13:49:39.543Z] [s2l] Extracted 8 record(s) from s2l\WhatsApp Image 2026-05-21 at 12.06.13 PM.jpeg
+[2026-05-21T13:49:39.545Z] [local-brokers] No images found — skipping.
+[2026-05-21T13:49:39.546Z] === EXTRACT COMPLETE | images: 5 | records: 41 | errors: 0 ===
+[2026-05-21T13:49:39.548Z] === NORMALISE STEP START ===
+[2026-05-21T13:49:39.550Z] Run ID: RUN-20260521-191939
+[2026-05-21T13:49:39.556Z] [local-brokers] No processed files found.
+[2026-05-21T13:49:39.557Z] Normalised 41 total record(s). Running deduplication...
+[2026-05-21T13:49:39.560Z] Running history comparison...
+[2026-05-21T13:49:39.569Z] History entries appended: 41
+[2026-05-21T13:49:39.575Z] === NORMALISE COMPLETE | total: 41 | master: 0 | review: 41 ===
+[2026-05-21T13:49:39.577Z] === EXPORT STEP START ===
+[2026-05-21T13:49:39.579Z] Loaded 0 master record(s) and 41 review record(s).
+[2026-05-21T13:49:39.582Z] Writing output/master/master_inventory.xlsx ...
+[2026-05-21T13:49:39.638Z] ✓ master_inventory.xlsx — 0 row(s)
+[2026-05-21T13:49:39.640Z] Writing output/exports/master_inventory.xlsx ...
+[2026-05-21T13:49:39.652Z] ✓ exports/master_inventory.xlsx — 0 row(s)
+[2026-05-21T13:49:39.653Z] Writing output/exports/master_inventory.csv ...
+[2026-05-21T13:49:39.656Z] ✓ master_inventory.csv — 0 row(s)
+[2026-05-21T13:49:39.657Z] Writing output/review/review_flags.xlsx ...
+[2026-05-21T13:49:39.689Z] ✓ review_flags.xlsx — 41 row(s)
+[2026-05-21T13:49:39.690Z] === EXPORT COMPLETE | master: 0 | review: 41 ===
+[2026-05-21T13:56:21.547Z] === EXTRACT STEP START ===
+[2026-05-21T13:56:21.551Z] Run ID: RUN-20260521-192621
+[2026-05-21T13:56:21.553Z] [dore] Found 1 image(s).
+[2026-05-21T13:56:21.555Z] [dore] Processing: dore\WhatsApp Image 2026-05-21 at 10.03.44 AM.jpeg
+[2026-05-21T13:56:23.371Z] [dore] Extracted 20 record(s) from dore\WhatsApp Image 2026-05-21 at 10.03.44 AM.jpeg
+[2026-05-21T13:56:23.371Z] [fnf] Found 2 image(s).
+[2026-05-21T13:56:23.372Z] [fnf] Processing: fnf\WhatsApp Image 2026-05-20 at 11.48.44 AM.jpeg
+[2026-05-21T13:56:24.665Z] [fnf] Extracted 13 record(s) from fnf\WhatsApp Image 2026-05-20 at 11.48.44 AM.jpeg
+[2026-05-21T13:56:24.666Z] [fnf] Processing: fnf\WhatsApp Image 2026-05-20 at 11.48.45 AM.jpeg
+[2026-05-21T13:56:25.210Z] [fnf] Extracted 0 record(s) from fnf\WhatsApp Image 2026-05-20 at 11.48.45 AM.jpeg
+[2026-05-21T13:56:25.211Z] [s2l] Found 2 image(s).
+[2026-05-21T13:56:25.211Z] [s2l] Processing: s2l\WhatsApp Image 2026-05-21 at 11.52.45 AM.jpeg
+[2026-05-21T13:56:25.487Z] [s2l] Extracted 0 record(s) from s2l\WhatsApp Image 2026-05-21 at 11.52.45 AM.jpeg
+[2026-05-21T13:56:25.488Z] [s2l] Processing: s2l\WhatsApp Image 2026-05-21 at 12.06.13 PM.jpeg
+[2026-05-21T13:56:26.471Z] [s2l] Extracted 8 record(s) from s2l\WhatsApp Image 2026-05-21 at 12.06.13 PM.jpeg
+[2026-05-21T13:56:26.471Z] [local-brokers] No images found — skipping.
+[2026-05-21T13:56:26.472Z] === EXTRACT COMPLETE | images: 5 | records: 41 | errors: 0 ===
+[2026-05-21T13:56:26.473Z] === NORMALISE STEP START ===
+[2026-05-21T13:56:26.474Z] Run ID: RUN-20260521-192626
+[2026-05-21T13:56:26.478Z] [local-brokers] No processed files found.
+[2026-05-21T13:56:26.479Z] Normalised 41 total record(s). Running deduplication...
+[2026-05-21T13:56:26.480Z] Running history comparison...
+[2026-05-21T13:56:26.485Z] History entries appended: 41
+[2026-05-21T13:56:26.485Z] Tier breakdown: {"Needs Manual Review":3,"Needs Review":38}
+[2026-05-21T13:56:26.486Z] Score range: min=0 max=60 avg=18
+[2026-05-21T13:56:26.489Z] === NORMALISE COMPLETE | total: 41 | master: 0 | review: 41 ===
+[2026-05-21T13:56:26.490Z] === EXPORT STEP START ===
+[2026-05-21T13:56:26.492Z] Loaded 0 master record(s) and 41 review record(s).
+[2026-05-21T13:56:26.493Z] Writing output/master/master_inventory.xlsx ...
+[2026-05-21T13:56:26.524Z] ✓ master_inventory.xlsx — 0 row(s)
+[2026-05-21T13:56:26.524Z] Writing output/exports/master_inventory.xlsx ...
+[2026-05-21T13:56:26.534Z] ✓ exports/master_inventory.xlsx — 0 row(s)
+[2026-05-21T13:56:26.535Z] Writing output/exports/master_inventory.csv ...
+[2026-05-21T13:56:26.537Z] ✓ master_inventory.csv — 0 row(s)
+[2026-05-21T13:56:26.537Z] Writing output/review/review_flags.xlsx ...
+[2026-05-21T13:56:26.557Z] ✓ review_flags.xlsx — 41 row(s)
+[2026-05-21T13:56:26.557Z] === EXPORT COMPLETE | master: 0 | review: 41 ===
+[2026-05-21T14:15:47.650Z] === EXTRACT STEP START ===
+[2026-05-21T14:15:47.651Z] Run ID: RUN-20260521-194547
+[2026-05-21T14:15:47.652Z] [dore] Found 1 image(s).
+[2026-05-21T14:15:47.653Z] [dore] Processing: dore\WhatsApp Image 2026-05-21 at 10.03.44 AM.jpeg
+[2026-05-21T14:15:50.270Z] [dore] Extracted 21 record(s) from dore\WhatsApp Image 2026-05-21 at 10.03.44 AM.jpeg
+[2026-05-21T14:15:50.272Z] [fnf] Found 2 image(s).
+[2026-05-21T14:15:50.273Z] [fnf] Processing: fnf\WhatsApp Image 2026-05-20 at 11.48.44 AM.jpeg
+[2026-05-21T14:15:53.882Z] [fnf] Extracted 25 record(s) from fnf\WhatsApp Image 2026-05-20 at 11.48.44 AM.jpeg
+[2026-05-21T14:15:53.882Z] [fnf] Processing: fnf\WhatsApp Image 2026-05-20 at 11.48.45 AM.jpeg
+[2026-05-21T14:15:55.351Z] [fnf] Extracted 0 record(s) from fnf\WhatsApp Image 2026-05-20 at 11.48.45 AM.jpeg
+[2026-05-21T14:15:55.352Z] [s2l] Found 2 image(s).
+[2026-05-21T14:15:55.353Z] [s2l] Processing: s2l\WhatsApp Image 2026-05-21 at 11.52.45 AM.jpeg
+[2026-05-21T14:15:59.954Z] [s2l] Extracted 11 record(s) from s2l\WhatsApp Image 2026-05-21 at 11.52.45 AM.jpeg
+[2026-05-21T14:15:59.955Z] [s2l] Processing: s2l\WhatsApp Image 2026-05-21 at 12.06.13 PM.jpeg
+[2026-05-21T14:16:09.257Z] [s2l] Extracted 43 record(s) from s2l\WhatsApp Image 2026-05-21 at 12.06.13 PM.jpeg
+[2026-05-21T14:16:09.258Z] [local-brokers] No images found — skipping.
+[2026-05-21T14:16:09.259Z] === EXTRACT COMPLETE | images: 5 | records: 100 | errors: 0 ===
+[2026-05-21T14:16:09.261Z] === NORMALISE STEP START ===
+[2026-05-21T14:16:09.262Z] Run ID: RUN-20260521-194609
+[2026-05-21T14:16:09.276Z] [local-brokers] No processed files found.
+[2026-05-21T14:16:09.277Z] Normalised 100 total record(s). Running deduplication...
+[2026-05-21T14:16:09.281Z] Running history comparison...
+[2026-05-21T14:16:09.295Z] History entries appended: 100
+[2026-05-21T14:16:09.297Z] Tier breakdown: {"Needs Manual Review":4,"Needs Review":96}
+[2026-05-21T14:16:09.299Z] Score range: min=0 max=60 avg=18
+[2026-05-21T14:16:09.304Z] === NORMALISE COMPLETE | total: 100 | master: 0 | review: 100 ===
+[2026-05-21T14:16:09.307Z] === EXPORT STEP START ===
+[2026-05-21T14:16:09.310Z] Loaded 0 master record(s) and 100 review record(s).
+[2026-05-21T14:16:09.311Z] Writing output/master/master_inventory.xlsx ...
+[2026-05-21T14:16:09.388Z] ✓ master_inventory.xlsx — 0 row(s)
+[2026-05-21T14:16:09.389Z] Writing output/exports/master_inventory.xlsx ...
+[2026-05-21T14:16:09.404Z] ✓ exports/master_inventory.xlsx — 0 row(s)
+[2026-05-21T14:16:09.406Z] Writing output/exports/master_inventory.csv ...
+[2026-05-21T14:16:09.409Z] ✓ master_inventory.csv — 0 row(s)
+[2026-05-21T14:16:09.410Z] Writing output/review/review_flags.xlsx ...
+[2026-05-21T14:16:09.477Z] ✓ review_flags.xlsx — 100 row(s)
+[2026-05-21T14:16:09.478Z] === EXPORT COMPLETE | master: 0 | review: 100 ===

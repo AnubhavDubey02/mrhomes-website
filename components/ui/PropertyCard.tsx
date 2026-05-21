@@ -41,6 +41,15 @@ export function PropertyCard({
             className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-90"
             loading="lazy"
           />
+        ) : property.videoTour ? (
+          <video
+            src={property.videoTour}
+            muted
+            autoPlay
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          />
         ) : null}
         {property.status !== 'available' && (
           <span className="absolute top-3 left-3 bg-paper text-ink text-[0.7rem] tracking-[0.14em] uppercase px-2 py-1 border border-line">
@@ -88,8 +97,15 @@ export function PropertyGrid({
   empty: React.ReactNode;
 }) {
   if (items.length === 0) return <>{empty}</>;
+  const gridClass =
+    items.length === 1
+      ? 'grid gap-px bg-line hairline mx-auto w-full max-w-md'
+      : items.length === 2
+        ? 'grid gap-px bg-line hairline mx-auto w-full max-w-5xl sm:grid-cols-2'
+        : 'grid gap-px bg-line hairline sm:grid-cols-2 lg:grid-cols-3';
+
   return (
-    <div className="grid gap-px bg-line hairline sm:grid-cols-2 lg:grid-cols-3">
+    <div className={gridClass}>
       {items.map((p) => (
         <PropertyCard key={p.slug} property={p} />
       ))}

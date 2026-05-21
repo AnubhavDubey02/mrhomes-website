@@ -1,0 +1,36 @@
+{
+  "_comment": "Configuration for inventory history tracking and stale listing detection.",
+
+  "history_file": "output/logs/inventory_history.csv",
+
+  "stale_detection": {
+    "enabled": true,
+    "stale_after_days": 30,
+    "_comment_stale": "A listing not seen in any extraction run for this many days is flagged Change_Type=REMOVED and Review_Status=Needs Review."
+  },
+
+  "tracked_fields": [
+    "Rent",
+    "Availability_Status",
+    "Furnishing",
+    "Floor",
+    "Listing_Status"
+  ],
+  "_comment_tracked": "Changes to any of these fields trigger Change_Type=UPDATED and record Updated_At.",
+
+  "history_key_fields": [
+    "Source",
+    "Source_Property_Ref",
+    "Source_Room_No",
+    "Property_Type",
+    "Sector"
+  ],
+  "_comment_key": "Composite key used to match records across extraction runs. A record with the same key across runs is the same property unit.",
+
+  "run_id_format": "RUN-YYYYMMDD-HHmmss",
+
+  "photos": {
+    "base_folder": "photos/listings",
+    "_comment": "Photos for a listing live under photos/listings/<MH_ID>/. The Photos field stores relative paths: [\"MRH-0001/img1.jpg\", \"MRH-0001/img2.jpg\"]"
+  }
+}

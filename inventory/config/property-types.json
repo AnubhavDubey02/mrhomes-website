@@ -1,0 +1,15 @@
+{
+  "_comment": "Canonical property type keys with OCR alias variants. Used by normalizers.mjs to map raw extracted values to a single canonical key before CRM import.",
+
+  "1rk":         ["1rk", "1 rk", "rk"],
+  "studio":      ["studio"],
+  "1bhk":        ["1bhk", "1 bhk", "1-bhk"],
+  "2bhk":        ["2bhk", "2 bhk", "2-bhk"],
+  "3bhk":        ["3bhk", "3 bhk", "3-bhk"],
+  "4bhk":        ["4bhk", "4 bhk", "4-bhk"],
+  "preoccupied": [
+    "pre occupied",
+    "preoccupied",
+    "shared room"
+  ]
+}

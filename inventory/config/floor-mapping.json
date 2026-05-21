@@ -1,0 +1,45 @@
+{
+  "_comment": "Maps raw floor descriptions to a canonical integer floor number. Negative = basement/lower ground.",
+
+  "numeric_overrides": {
+    "ground floor":        0,
+    "gf":                  0,
+    "g":                   0,
+    "lower ground":       -1,
+    "lg":                 -1,
+    "basement":           -1,
+    "b":                  -1,
+    "lower basement":     -2,
+    "lb":                 -2,
+    "mezzanine":           0,
+    "mez":                 0
+  },
+
+  "ordinal_map": {
+    "first":    1,
+    "second":   2,
+    "third":    3,
+    "fourth":   4,
+    "fifth":    5,
+    "sixth":    6,
+    "seventh":  7,
+    "eighth":   8,
+    "ninth":    9,
+    "tenth":    10,
+    "eleventh": 11,
+    "twelfth":  12,
+    "thirteenth":13,
+    "fourteenth":14,
+    "fifteenth": 15
+  },
+
+  "suffix_strip": ["st", "nd", "rd", "th", "floor", "flr", "fl", "/f"],
+
+  "high_rise_threshold": 10,
+
+  "top_floor_aliases": ["top", "top floor", "terrace floor", "tf", "highest floor"],
+
+  "penthouse_aliases": ["ph", "penthouse", "pent house", "pent-house"],
+
+  "notes": "Use floor=-1 for lower ground. Use null for 'floor unknown'. Penthouse floors should inherit building top floor + 1 as a soft convention."
+}
