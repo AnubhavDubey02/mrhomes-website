@@ -22,18 +22,18 @@ export const metadata: Metadata = {
   themeColor: '#F6F3EC',
   icons: {
     icon: [
-      { url: '/brand/logo-current.png', type: 'image/png' },
+      { url: '/brand/logo-web.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/brand/logo-current.png', type: 'image/png', sizes: '180x180' },
+      { url: '/brand/logo-web.png', type: 'image/png', sizes: '180x180' },
     ],
-    shortcut: '/brand/logo-current.png',
+    shortcut: '/brand/logo-web.png',
   },
   openGraph: {
     siteName: SITE.name,
     locale: SITE.locale,
     type: 'website',
-    images: [{ url: '/brand/logo-current.png', width: 1024, height: 1024 }],
+    images: [{ url: '/brand/logo-web.png' }],
   },
 };
 
