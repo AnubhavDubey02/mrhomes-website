@@ -20,6 +20,21 @@ export const metadata: Metadata = {
   description: 'A boutique advisory for buying, selling and renting premium homes in Gurgaon.',
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#F6F3EC',
+  icons: {
+    icon: [
+      { url: '/brand/logo-current.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/brand/logo-current.png', type: 'image/png', sizes: '180x180' },
+    ],
+    shortcut: '/brand/logo-current.png',
+  },
+  openGraph: {
+    siteName: SITE.name,
+    locale: SITE.locale,
+    type: 'website',
+    images: [{ url: '/brand/logo-current.png', width: 1024, height: 1024 }],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
