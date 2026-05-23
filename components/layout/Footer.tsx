@@ -10,15 +10,32 @@ export function Footer() {
     <footer className="border-t border-line mt-[var(--section-y)]">
       <Container className="py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <Link href="/" aria-label="Mr Homes Realtors — home">
-            <Image
-              src="/brand/logo-stacked.png"
-              alt="Mr Homes Realtors"
-              width={140}
-              height={100}
-              className="w-auto"
-              style={{ height: 72 }}
-            />
+          <Link href="/" aria-label="Mr Homes Realtors — home" className="inline-block">
+            <span
+              className="inline-block"
+              style={{
+                width: 98,
+                height: 104,
+                overflow: 'hidden',
+                flexShrink: 0,
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/logo-stacked.png"
+                alt="Mr Homes Realtors"
+                width={199}
+                height={147}
+                style={{
+                  width: 199,
+                  height: 147,
+                  marginTop: -18,
+                  marginLeft: -53,
+                  maxWidth: 'none',
+                  flexShrink: 0,
+                }}
+              />
+            </span>
           </Link>
           <p className="mt-3 text-muted max-w-prose text-sm">
             A boutique advisory for buying, selling and renting premium homes
