@@ -190,7 +190,7 @@ export function emptyStateCopy(f: PropertyFilters): {
   const where = f.area ? ` in ${f.area.name}` : '';
   const title = `No public ${kind} listings are currently shown${where}.`;
   const body =
-    'We may still have off-market or recently added options matching your requirement.';
+    "Share your requirement and we'll match verified options from our Gurgaon network.";
   return { title, body };
 }
 

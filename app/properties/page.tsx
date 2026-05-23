@@ -34,7 +34,7 @@ export default function PropertiesPage({
   // Default empty-state copy when no filters are present.
   const defaultEmpty = {
     title: 'No public listings at the moment.',
-    body: 'Our active inventory rotates discreetly. If you are considering a purchase, sale or lease, we would rather understand your brief than fill this page with stock you do not need.',
+    body: "Share your requirement and we'll match verified options from our Gurgaon network.",
   };
   const empty = filtersActive ? emptyStateCopy(filters) : defaultEmpty;
 

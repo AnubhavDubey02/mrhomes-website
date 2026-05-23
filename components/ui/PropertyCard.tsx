@@ -4,6 +4,7 @@ import { LOCATIONS } from '@/lib/locations';
 
 const STATUS_LABEL: Record<Property['status'], string> = {
   available: 'Available',
+  featured: 'Available',
   'under-offer': 'Under offer',
   sold: 'Sold',
 };
@@ -50,8 +51,13 @@ export function PropertyCard({
             playsInline
             className="w-full h-full object-cover"
           />
-        ) : null}
-        {property.status !== 'available' && (
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-[0.65rem] tracking-[0.15em] text-muted uppercase select-none">
+            Photo pending
+          </div>
+        )}
+
+        {property.status !== 'available' && property.status !== 'featured' && (
           <span className="absolute top-3 left-3 bg-paper text-ink text-[0.7rem] tracking-[0.14em] uppercase px-2 py-1 border border-line">
             {STATUS_LABEL[property.status]}
           </span>

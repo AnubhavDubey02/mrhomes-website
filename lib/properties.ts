@@ -1,25 +1,35 @@
-// Real inventory only. Leave this array empty until verified listings exist —
-// the UI is designed to render a dignified empty state rather than show fake stock.
+// Real inventory only — loaded from data/properties.json which is generated
+// by scripts/transform-inventory.ts from a CRM CSV export.
+// Do NOT edit the JSON file manually; run the transform script instead.
+
+import propertiesData from '@/data/properties.json';
+
 export type Property = {
-  mhId: string;              // internal only; never render publicly
+  mhId: string;              // PublicRef from CRM (MRH-XXXX)
   slug: string;
   title: string;
-  locationSlug: string;     // references LOCATIONS in ./locations.ts
-  sector: string;           // internal traceability
-  propertyRef: string;      // internal traceability
-  roomNo: string;           // internal traceability
-  type: string;             // internal traceability
-  rent: string;             // internal traceability
-  mediaPath: string;        // internal traceability
+  locationSlug: string;      // references LOCATIONS in ./locations.ts
+  sector: string;
+  propertyRef: string;       // internal traceability
+  roomNo: string;            // internal traceability
+  type: string;              // internal traceability
+  rent: string;              // internal traceability
+  mediaPath: string;         // MediaFolderLink from CRM
   intent: 'rent' | 'buy' | 'commercial';
   category: string;
-  configuration: string;    // e.g., "4 BHK + Servant"
+  configuration: string;     // e.g., "4 BHK + Servant"
+  area: string;
+  floor: string;
+  societyBuilding: string;
+  availableFrom: string;
+  deposit: string;
+  furnishing: string;
   carpetAreaSqft: number;
-  priceLabel: string;       // e.g., "On request" or "₹ 8.5 Cr"
-  status: 'available' | 'under-offer' | 'sold';
+  priceLabel: string;        // e.g., "On request" or "₹ 8.5 Cr"
+  status: 'available' | 'featured' | 'under-offer' | 'sold';
   highlights: string[];
   images: string[];
-  videoTour?: string;       // path to video tour, e.g. "/listings/MRH-0001/tour.mp4"
+  videoTour?: string;        // path to video tour, e.g. "/listings/MRH-0001/tour.mp4"
   description: string;
 };
 
@@ -31,31 +41,7 @@ export function isVideoPath(path: string): boolean {
   return VIDEO_EXTS.has(ext);
 }
 
-export const PROPERTIES: Property[] = [
-  {
-    mhId: 'MRH-0001',
-    slug: 'sector-52-1bhk-room-402',
-    title: '1 BHK · Sector 52, Gurgaon',
-    locationSlug: 'sector-52',
-    sector: 'Sec 52',
-    propertyRef: 'Property 1197',
-    roomNo: 'Room 402',
-    type: '1BHK',
-    rent: '\u20b925K',
-    mediaPath: '/listings/MRH-0001/tour.mp4',
-    intent: 'rent',
-    category: '1bhk',
-    configuration: '1 BHK',
-    carpetAreaSqft: 0,
-    priceLabel: '₹ 25,000/month',
-    status: 'available',
-    highlights: ['Fully Furnished', 'Immediate Availability'],
-    images: [],
-    videoTour: '/listings/MRH-0001/tour.mp4',
-    description:
-      'Fully furnished 1 BHK available for immediate occupancy in Sector 52, Gurgaon. Monthly rent ₹25,000.',
-  },
-];
+export const PROPERTIES: Property[] = propertiesData as Property[];
 
 export function getProperty(slug: string) {
   return PROPERTIES.find((p) => p.slug === slug);

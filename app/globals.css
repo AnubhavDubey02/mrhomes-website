@@ -27,7 +27,7 @@
 
   /* Layout */
   --radius: 2px;
-  --section-y: clamp(3.25rem, 6.5vw, 7.25rem);
+  --section-y: clamp(3.5rem, 7vw, 8.5rem);
 }
 
 @layer base {
@@ -39,7 +39,7 @@
   }
   body {
     font-family: var(--font-sans);
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.6;
     font-weight: 400;
     overflow-x: hidden; /* prevent horizontal bleed from any full-width sections */
@@ -69,7 +69,7 @@
   /* Primary button — minimal, no shadow */
   .btn {
     display: inline-flex; align-items: center; gap: 0.625rem;
-    padding: 0.875rem 1.5rem;
+    padding: 0.875rem 1.75rem;
     min-height: 44px; /* WCAG touch target */
     font-size: 0.875rem; letter-spacing: 0.04em;
     border-radius: var(--radius);

@@ -40,6 +40,8 @@ export function InventoryFlowPage({
       first(searchParams?.budget) ||
       first(searchParams?.sector),
   );
+  const emptyBody =
+    "Share your requirement and we'll match verified options from our Gurgaon network.";
 
   return (
     <Section className="pt-24">
@@ -85,6 +87,7 @@ export function InventoryFlowPage({
             <NoMatchingResults
               intent={intent}
               hasFilters={hasFilters}
+              body={emptyBody}
             />
           }
         />
@@ -163,9 +166,11 @@ function InventoryFilters({
 function NoMatchingResults({
   intent,
   hasFilters,
+  body,
 }: {
   intent: InventoryIntent;
   hasFilters: boolean;
+  body: string;
 }) {
   const label = labels[intent].toLowerCase();
   const href = `/${intent}`;
@@ -183,10 +188,17 @@ function NoMatchingResults({
         <p className="mt-6 text-muted leading-relaxed">
           Adjust filters or broaden your search
         </p>
+        <p className="mt-3 text-muted leading-relaxed">{body}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link href={href} className="btn btn-primary justify-center">
             Clear Filters
           </Link>
+<a
+  href="#inventory-filters"
+  className="btn btn-ghost justify-center"
+>
+  Modify Search
+</a>
           <Link
             href={href}
             className="btn btn-ghost justify-center"

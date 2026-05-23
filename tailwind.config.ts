@@ -5,8 +5,8 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: { DEFAULT: '1.25rem', md: '2rem', lg: '3rem' },
-      screens: { sm: '640px', md: '768px', lg: '1024px', xl: '1200px', '2xl': '1320px' },
+      padding: { DEFAULT: '1.25rem', md: '2rem', lg: '2.5rem' },
+      screens: { sm: '640px', md: '768px', lg: '1024px', xl: '1400px', '2xl': '1560px' },
     },
     extend: {
       colors: {
@@ -23,9 +23,9 @@ const config: Config = {
       },
       fontSize: {
         // mobile-first; scales via responsive utilities
-        'display-xl': ['clamp(2.75rem, 6vw + 1rem, 5.5rem)', { lineHeight: '1.02', letterSpacing: '-0.02em' }],
-        'display-lg': ['clamp(2.25rem, 4vw + 1rem, 4rem)', { lineHeight: '1.05', letterSpacing: '-0.015em' }],
-        'display-md': ['clamp(1.75rem, 2.5vw + 1rem, 2.75rem)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
+        'display-xl': ['clamp(2.75rem, 5.5vw + 1rem, 6.5rem)', { lineHeight: '1.01', letterSpacing: '-0.025em' }],
+        'display-lg': ['clamp(2.25rem, 3.5vw + 1rem, 4.75rem)', { lineHeight: '1.04', letterSpacing: '-0.018em' }],
+        'display-md': ['clamp(1.75rem, 2vw + 1rem, 3.25rem)', { lineHeight: '1.08', letterSpacing: '-0.01em' }],
         eyebrow: ['0.75rem', { lineHeight: '1', letterSpacing: '0.18em' }],
       },
       borderRadius: { xs: '2px', sm: '4px', DEFAULT: '6px' },

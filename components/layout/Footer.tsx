@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from './Container';
-import { Logo } from './Logo';
 import { LOCATIONS } from '@/lib/locations';
 import { BUSINESS, telLink, mailtoLink } from '@/lib/business';
 import { whatsappLink, waMessages } from '@/lib/whatsapp';
@@ -10,7 +10,16 @@ export function Footer() {
     <footer className="border-t border-line mt-[var(--section-y)]">
       <Container className="py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <Logo />
+          <Link href="/" aria-label="Mr Homes Realtors — home">
+            <Image
+              src="/brand/logo-stacked.png"
+              alt="Mr Homes Realtors"
+              width={140}
+              height={100}
+              className="w-auto"
+              style={{ height: 72 }}
+            />
+          </Link>
           <p className="mt-3 text-muted max-w-prose text-sm">
             A boutique advisory for buying, selling and renting premium homes
             in Gurgaon.

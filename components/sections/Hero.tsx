@@ -10,14 +10,14 @@ import { whatsappLink, waMessages } from '@/lib/whatsapp';
  */
 export function Hero() {
   return (
-    <section aria-label="Introduction" className="pt-10 md:pt-14 lg:pt-20 pb-14 md:pb-20">
+    <section aria-label="Introduction" className="pt-14 md:pt-20 lg:pt-28 pb-20 md:pb-28 min-h-[88vh] flex flex-col justify-center">
       <Container>
-        <div className="grid gap-10 lg:gap-16 lg:grid-cols-12 items-end">
-          <div className="lg:col-span-7 lg:pt-8">
+        <div className="grid gap-10 lg:gap-20 lg:grid-cols-12 items-center">
+          <div className="lg:col-span-6 lg:pt-8">
             <p className="eyebrow animate-rise">
               Gurgaon · Real Estate Advisory
             </p>
-            <h1 className="font-display text-display-xl mt-6 lg:mt-8 max-w-[16ch] animate-rise animate-rise-1">
+            <h1 className="font-display text-display-xl mt-6 lg:mt-8 max-w-[18ch] animate-rise animate-rise-1">
               Find the right place for the life you're building.
             </h1>
             <p className="mt-8 max-w-prose text-lg leading-relaxed text-muted animate-rise animate-rise-2">
@@ -39,8 +39,8 @@ export function Hero() {
             </div>
           </div>
 
-          <figure className="lg:col-span-5 animate-rise animate-rise-2">
-            <div className="relative aspect-[3/4] w-full overflow-hidden border border-line bg-bone">
+          <figure className="lg:col-span-6 animate-rise animate-rise-2">
+            <div className="relative aspect-[4/5] w-full overflow-hidden border border-line bg-bone">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/brand/placeholders/gurgaon-skyline.webp"
@@ -63,7 +63,7 @@ export function Hero() {
           </figure>
         </div>
 
-        <div className="mt-8 lg:mt-12 grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 lg:ml-auto lg:max-w-[58%] animate-rise animate-rise-4">
+        <div className="mt-10 lg:mt-16 grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 lg:ml-auto lg:max-w-[58%] animate-rise animate-rise-4">
           <figure>
             <div className="relative aspect-[4/3] w-full overflow-hidden border border-line bg-bone">
               {/* eslint-disable-next-line @next/next/no-img-element */}

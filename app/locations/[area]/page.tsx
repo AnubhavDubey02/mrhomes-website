@@ -184,7 +184,7 @@ export default function LocationPage({ params }: { params: { area: string } }) {
               <EmptyState
                 eyebrow="Inventory"
                 title={`Nothing live in ${loc!.name} right now.`}
-                body={`We are not currently carrying public stock in ${loc!.name}. Share your brief and we will reach out the moment a matching option opens.`}
+                body="Share your requirement and we'll match verified options from our Gurgaon network."
                 whatsappMessage={waMessages.location(loc!.name)}
               />
             }

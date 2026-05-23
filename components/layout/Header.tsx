@@ -41,12 +41,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 bg-paper/85 backdrop-blur border-b border-line">
-      <Container className="flex items-center justify-between h-16 md:h-20">
+      <Container className="flex items-center justify-between h-[4.5rem] md:h-[5.5rem]">
         <Logo />
 
         <nav
           aria-label="Primary"
-          className="hidden lg:flex items-center gap-9 text-[0.86rem]"
+          className="hidden lg:flex items-center gap-10 text-[0.9rem]"
         >
           {NAV.map((n) => (
             <Link key={n.href} href={n.href} className="link text-ink/80 hover:text-ink">

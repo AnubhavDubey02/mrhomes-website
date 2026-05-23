@@ -22,7 +22,7 @@ export function InventoryCategoryPage({
   return (
     <Section className="pt-24">
       <p className="eyebrow">
-        {parentLabel} Â· {category.label}
+        {parentLabel} {'\u00B7'} {category.label}
       </p>
       <h1 className="font-display text-display-lg mt-6">{category.label}</h1>
       <p className="mt-8 max-w-prose text-lg text-muted">
@@ -36,7 +36,7 @@ export function InventoryCategoryPage({
             <EmptyState
               eyebrow="Inventory"
               title={`No public ${category.label.toLowerCase()} listings are currently shown.`}
-              body="Share your brief and we will respond with current matching options."
+              body="Share your requirement and we'll match verified options from our Gurgaon network."
             />
           }
         />

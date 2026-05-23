@@ -107,3 +107,40 @@
 [2026-05-21T14:16:09.410Z] Writing output/review/review_flags.xlsx ...
 [2026-05-21T14:16:09.477Z] ✓ review_flags.xlsx — 100 row(s)
 [2026-05-21T14:16:09.478Z] === EXPORT COMPLETE | master: 0 | review: 100 ===
+[2026-05-22T21:08:01.674Z] === EXTRACT STEP START ===
+[2026-05-22T21:08:01.676Z] Run ID: RUN-20260523-023801
+[2026-05-22T21:08:01.677Z] [dore] Found 1 image(s).
+[2026-05-22T21:08:01.677Z] [dore] Processing: dore\WhatsApp Image 2026-05-21 at 10.03.44 AM.jpeg
+[2026-05-22T21:08:04.594Z] [dore] Extracted 21 record(s) from dore\WhatsApp Image 2026-05-21 at 10.03.44 AM.jpeg
+[2026-05-22T21:08:04.595Z] [fnf] Found 2 image(s).
+[2026-05-22T21:08:04.596Z] [fnf] Processing: fnf\WhatsApp Image 2026-05-20 at 11.48.44 AM.jpeg
+[2026-05-22T21:08:07.241Z] [fnf] Extracted 25 record(s) from fnf\WhatsApp Image 2026-05-20 at 11.48.44 AM.jpeg
+[2026-05-22T21:08:07.241Z] [fnf] Processing: fnf\WhatsApp Image 2026-05-20 at 11.48.45 AM.jpeg
+[2026-05-22T21:08:08.292Z] [fnf] Extracted 0 record(s) from fnf\WhatsApp Image 2026-05-20 at 11.48.45 AM.jpeg
+[2026-05-22T21:08:08.292Z] [s2l] Found 2 image(s).
+[2026-05-22T21:08:08.292Z] [s2l] Processing: s2l\WhatsApp Image 2026-05-21 at 11.52.45 AM.jpeg
+[2026-05-22T21:08:11.457Z] [s2l] Extracted 11 record(s) from s2l\WhatsApp Image 2026-05-21 at 11.52.45 AM.jpeg
+[2026-05-22T21:08:11.458Z] [s2l] Processing: s2l\WhatsApp Image 2026-05-21 at 12.06.13 PM.jpeg
+[2026-05-22T21:08:20.445Z] [s2l] Extracted 43 record(s) from s2l\WhatsApp Image 2026-05-21 at 12.06.13 PM.jpeg
+[2026-05-22T21:08:20.446Z] [local-brokers] No images found — skipping.
+[2026-05-22T21:08:20.447Z] === EXTRACT COMPLETE | images: 5 | records: 100 | errors: 0 ===
+[2026-05-22T21:08:20.449Z] === NORMALISE STEP START ===
+[2026-05-22T21:08:20.450Z] Run ID: RUN-20260523-023820
+[2026-05-22T21:08:20.455Z] [local-brokers] No processed files found.
+[2026-05-22T21:08:20.456Z] Normalised 100 total record(s). Running deduplication...
+[2026-05-22T21:08:20.457Z] Running history comparison...
+[2026-05-22T21:08:20.469Z] History entries appended: 100
+[2026-05-22T21:08:20.469Z] Tier breakdown: {"Needs Manual Review":4,"Needs Review":96}
+[2026-05-22T21:08:20.470Z] Score range: min=0 max=60 avg=18
+[2026-05-22T21:08:20.473Z] === NORMALISE COMPLETE | total: 100 | master: 0 | review: 100 ===
+[2026-05-22T21:08:20.474Z] === EXPORT STEP START ===
+[2026-05-22T21:08:20.475Z] Loaded 0 master record(s) and 100 review record(s).
+[2026-05-22T21:08:20.476Z] Writing output/master/master_inventory.xlsx ...
+[2026-05-22T21:08:20.518Z] ✓ master_inventory.xlsx — 0 row(s)
+[2026-05-22T21:08:20.519Z] Writing output/exports/master_inventory.xlsx ...
+[2026-05-22T21:08:20.527Z] ✓ exports/master_inventory.xlsx — 0 row(s)
+[2026-05-22T21:08:20.527Z] Writing output/exports/master_inventory.csv ...
+[2026-05-22T21:08:20.530Z] ✓ master_inventory.csv — 0 row(s)
+[2026-05-22T21:08:20.531Z] Writing output/review/review_flags.xlsx ...
+[2026-05-22T21:08:20.576Z] ✓ review_flags.xlsx — 100 row(s)
+[2026-05-22T21:08:20.577Z] === EXPORT COMPLETE | master: 0 | review: 100 ===
