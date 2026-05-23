@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { Container } from './Container';
 import { Logo } from './Logo';
 import { whatsappLink, waMessages } from '@/lib/whatsapp';
@@ -19,6 +20,12 @@ const NAV: NavItem[] = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close menu on navigation
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   // Close the mobile panel on route change / escape, and lock scroll while open.
   useEffect(() => {
@@ -28,6 +35,7 @@ export function Header() {
       document.body.style.overflow = 'hidden';
       document.body.classList.add('nav-open');
     } else {
+      document.body.style.overflow = '';
       document.body.classList.remove('nav-open');
     }
     return () => {
@@ -40,56 +48,58 @@ export function Header() {
   const waHref = whatsappLink(waMessages.general);
 
   return (
-    <header className="sticky top-0 z-40 bg-paper/85 backdrop-blur border-b border-line">
-      <Container className="flex items-center justify-between h-[4.5rem] md:h-[5.5rem]">
-        <Logo />
+    <>
+      <header className="sticky top-0 z-40 bg-paper/85 backdrop-blur border-b border-line">
+        <Container className="flex items-center justify-between h-[4.5rem] md:h-[5.5rem]">
+          <Logo />
 
-        <nav
-          aria-label="Primary"
-          className="hidden lg:flex items-center gap-10 text-[0.9rem]"
-        >
-          {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="link text-ink/80 hover:text-ink">
-              {n.label}
-            </Link>
-          ))}
-          <a
-            href={waHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
+          <nav
+            aria-label="Primary"
+            className="hidden lg:flex items-center gap-10 text-[0.9rem]"
           >
-            WhatsApp
-          </a>
-        </nav>
+            {NAV.map((n) => (
+              <Link key={n.href} href={n.href} className="link text-ink/80 hover:text-ink">
+                {n.label}
+              </Link>
+            ))}
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              WhatsApp
+            </a>
+          </nav>
 
-        {/* Mobile / tablet trigger */}
-        <button
-          type="button"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
-          className="lg:hidden inline-flex flex-col justify-center gap-[5px] w-9 h-9 -mr-2"
-        >
-          <span
-            className={`block h-px w-6 bg-ink transition-transform duration-300 ease-editorial ${
-              open ? 'translate-y-[6px] rotate-45' : ''
-            }`}
-          />
-          <span
-            className={`block h-px w-6 bg-ink transition-transform duration-300 ease-editorial ${
-              open ? '-translate-y-[6px] -rotate-45' : ''
-            }`}
-          />
-        </button>
-      </Container>
+          {/* Mobile / tablet trigger */}
+          <button
+            type="button"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
+            className="lg:hidden inline-flex flex-col justify-center items-center gap-[5px] w-11 h-11 -mr-3"
+          >
+            <span
+              className={`block h-px w-6 bg-ink transition-transform duration-300 ease-editorial ${
+                open ? 'translate-y-[6px] rotate-45' : ''
+              }`}
+            />
+            <span
+              className={`block h-px w-6 bg-ink transition-transform duration-300 ease-editorial ${
+                open ? '-translate-y-[6px] -rotate-45' : ''
+              }`}
+            />
+          </button>
+        </Container>
+      </header>
 
-      {/* Mobile panel */}
+      {/* Mobile panel - True fixed overlay */}
       <div
         id="mobile-nav"
-        className={`lg:hidden overflow-hidden border-t border-line transition-[max-height,opacity] duration-500 ease-editorial ${
-          open ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
+        className={`fixed top-[4.5rem] md:top-[5.5rem] left-0 right-0 bottom-0 z-30 lg:hidden overflow-y-auto bg-paper transition-[opacity,visibility] duration-300 ease-editorial ${
+          open ? 'opacity-100 visible border-b border-line' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
         <Container className="py-8">
@@ -117,6 +127,6 @@ export function Header() {
           </a>
         </Container>
       </div>
-    </header>
+    </>
   );
 }

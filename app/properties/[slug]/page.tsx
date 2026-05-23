@@ -6,6 +6,8 @@ import { buildMetadata } from '@/lib/seo';
 import { telLink } from '@/lib/business';
 import { whatsappLink } from '@/lib/whatsapp';
 
+import { ShareButton } from '@/components/ui/ShareButton';
+
 export function generateStaticParams() {
   return PROPERTIES.map((p) => ({ slug: p.slug }));
 }
@@ -80,6 +82,7 @@ ${property.type} | ${property.sector} | ${property.rent}.`;
         <a href={telLink} className="btn btn-ghost justify-center">
           Call Now
         </a>
+        <ShareButton title={property.title} />
       </div>
 
       {hasImages && (
@@ -176,7 +179,13 @@ ${property.type} | ${property.sector} | ${property.rent}.`;
         </div>
       )}
 
-      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px border-t border-line bg-line p-px sm:hidden">
+      <div 
+        className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px p-px sm:hidden property-mobile-cta"
+        style={{ 
+          borderTop: 'none',
+          backgroundColor: 'rgba(20, 19, 15, 0.04)' 
+        }}
+      >
         <a
           href={whatsappLink(propertyWaMessage)}
           target="_blank"

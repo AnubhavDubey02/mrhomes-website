@@ -36,6 +36,7 @@
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    scrollbar-gutter: stable;
   }
   body {
     font-family: var(--font-sans);
@@ -112,6 +113,10 @@
 body.nav-open .wa-float {
   opacity: 0;
   pointer-events: none;
+}
+
+body.nav-open .property-mobile-cta {
+  display: none !important;
 }
 
 /* Safe-area bottom clearance for notched / home-indicator phones */

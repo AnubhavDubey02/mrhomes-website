@@ -20,14 +20,14 @@ const SYMBOL_PAD_TOP    = 40;
 const SYMBOL_PAD_LEFT   = 23;
 
 // ── Rendering targets ─────────────────────────────────────────────────────
-const MOBILE_INK_H  = 34;   // px — target visible symbol ink height on mobile
+const MOBILE_INK_H  = 38;   // px — target visible symbol ink height on mobile
 
 // Derived: mobile logo parameters
-const mobileCanvasH    = Math.round(MOBILE_INK_H * (SYMBOL_CANVAS_H / SYMBOL_INK_H));    // 44px
-const mobileCanvasW    = Math.round(mobileCanvasH * (SYMBOL_CANVAS_W / SYMBOL_CANVAS_H)); // 42px
-const mobileTopOffset  = Math.round(SYMBOL_PAD_TOP * (mobileCanvasH / SYMBOL_CANVAS_H));  // 6px
-const mobileLeftOffset = Math.round(SYMBOL_PAD_LEFT * (mobileCanvasH / SYMBOL_CANVAS_H)); // 3px
-const mobileVisibleW   = Math.round(MOBILE_INK_H * (SYMBOL_INK_W / SYMBOL_INK_H)) + 1;   // 36px
+const mobileCanvasH    = Math.round(MOBILE_INK_H * (SYMBOL_CANVAS_H / SYMBOL_INK_H));    // 49px
+const mobileCanvasW    = Math.round(mobileCanvasH * (SYMBOL_CANVAS_W / SYMBOL_CANVAS_H)); // 47px
+const mobileTopOffset  = Math.round(SYMBOL_PAD_TOP * (mobileCanvasH / SYMBOL_CANVAS_H));  // 7px
+const mobileLeftOffset = Math.round(SYMBOL_PAD_LEFT * (mobileCanvasH / SYMBOL_CANVAS_H)); // 4px
+const mobileVisibleW   = Math.round(MOBILE_INK_H * (SYMBOL_INK_W / SYMBOL_INK_H)) + 1;   // 40px
 
 const DESKTOP_SRCS = ['/brand/logo-header-tight.png', '/brand/logo-dark.png'] as const;
 const MOBILE_SRCS  = ['/brand/logo-symbol.png', '/brand/logo-header-tight.png'] as const;

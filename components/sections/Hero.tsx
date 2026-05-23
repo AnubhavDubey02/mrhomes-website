@@ -17,7 +17,7 @@ export function Hero() {
             <p className="eyebrow animate-rise">
               Gurgaon · Real Estate Advisory
             </p>
-            <h1 className="font-display text-display-xl mt-6 lg:mt-8 max-w-[18ch] animate-rise animate-rise-1">
+            <h1 className="font-display text-display-xl mt-6 lg:mt-8 max-w-[18ch] pr-2 animate-rise animate-rise-1">
               Find the right place for the life you're building.
             </h1>
             <p className="mt-8 max-w-prose text-lg leading-relaxed text-muted animate-rise animate-rise-2">
