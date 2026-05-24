@@ -25,6 +25,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     title: p.title,
     description: p.description,
     path: `/properties/${p.slug}`,
+    image: p.images.length > 0 ? p.images[0] : undefined,
   });
 }
 
@@ -52,9 +53,52 @@ ${property.type} | ${property.sector} | ${property.rent}.`;
     ['Furnishing', property.furnishing || 'Available on request'],
   ];
   const related = similarProperties(property);
+  const priceVal = budgetValue(property);
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateListing',
+    'name': property.title,
+    'description': property.description || `${property.title} in Gurgaon. Ref: ${property.mhId}`,
+    'url': `https://mrhomesrealtors.com/properties/${property.slug}`,
+    'identifier': property.mhId,
+    'datePosted': '2026-05-24',
+    'location': {
+      '@type': 'Place',
+      'name': property.sector,
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Gurgaon',
+        'addressRegion': 'Haryana',
+        'addressCountry': 'IN',
+      },
+    },
+    'about': {
+      '@type': 'SingleFamilyResidence',
+      'name': property.title,
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Gurgaon',
+        'addressRegion': 'Haryana',
+        'addressCountry': 'IN',
+      },
+      'numberOfRooms': property.type.includes('BHK') ? parseInt(property.type, 10) : 1,
+    },
+    'offers': {
+      '@type': 'Offer',
+      'price': priceVal > 0 ? priceVal : undefined,
+      'priceCurrency': 'INR',
+      'businessFunction': property.intent === 'rent' ? 'http://purl.org/goodrelations/v1#LeaseOut' : 'http://purl.org/goodrelations/v1#Sell',
+      'availability': 'https://schema.org/InStock',
+    },
+  };
 
   return (
     <Section className="pt-24 pb-28 sm:pb-[var(--section-y)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <p className="eyebrow">{property.configuration}</p>
       <h1 className="font-display text-display-lg mt-6">{property.title}</h1>
       <p className="mt-6 text-muted">{property.priceLabel}</p>
@@ -138,7 +182,7 @@ ${property.type} | ${property.sector} | ${property.rent}.`;
 
       {property.description && (
         <div className="mt-10 max-w-prose">
-          <p className="text-lg text-muted leading-relaxed">
+          <p className="text-lg text-muted leading-relaxed whitespace-pre-line">
             {property.description}
           </p>
         </div>

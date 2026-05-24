@@ -131,3 +131,10 @@ body.nav-open .property-mobile-cta {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Prevent fixed bottom CTA from overlapping footer content on mobile */
+@media (max-width: 639px) {
+  body:has(.property-mobile-cta) footer {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+}

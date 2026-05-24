@@ -15,6 +15,10 @@ export function buildMetadata(input: {
   image?: string;
 }): Metadata {
   const url = `${SITE.url}${input.path ?? ''}`;
+  const imageUrl = input.image
+    ? (input.image.startsWith('http') ? input.image : `${SITE.url}${input.image}`)
+    : `${SITE.url}/brand/logo-header-tight.png`;
+
   return {
     title: `${input.title} — ${SITE.name}`,
     description: input.description,
@@ -26,8 +30,13 @@ export function buildMetadata(input: {
       siteName: SITE.name,
       locale: SITE.locale,
       type: 'website',
-      images: input.image ? [{ url: input.image }] : undefined,
+      images: [{ url: imageUrl }],
     },
-    twitter: { card: 'summary_large_image', title: input.title, description: input.description },
+    twitter: {
+      card: 'summary_large_image',
+      title: input.title,
+      description: input.description,
+      images: [imageUrl],
+    },
   };
 }
