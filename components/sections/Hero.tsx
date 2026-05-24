@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { whatsappLink, waMessages } from '@/lib/whatsapp';
 
@@ -41,21 +42,25 @@ export function Hero() {
 
           <figure className="lg:col-span-6 animate-rise animate-rise-2">
             <div className="relative aspect-[4/5] w-full overflow-hidden border border-line bg-bone">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/brand/placeholders/gurgaon-skyline.webp"
                 alt="Gurgaon skyline"
-                className="h-full w-full object-cover opacity-90"
+                fill
+                priority
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover opacity-90"
               />
-              <div className="absolute right-4 top-4 hidden w-32 overflow-hidden border border-paper/80 bg-paper md:block">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="absolute right-4 top-4 hidden w-32 overflow-hidden border border-paper/80 bg-paper md:block z-10">
+                <Image
                   src="/brand/placeholders/minimal-luxury-interior.webp"
                   alt="Minimal luxury interior"
+                  width={128}
+                  height={96}
+                  sizes="128px"
                   className="aspect-[4/3] w-full object-cover opacity-90"
                 />
               </div>
-              <div className="absolute inset-x-0 bottom-0 border-t border-line bg-paper/80 px-4 py-3 backdrop-blur">
+              <div className="absolute inset-x-0 bottom-0 border-t border-line bg-paper/80 px-4 py-3 backdrop-blur z-10">
                 <p className="eyebrow">Current Gurgaon inventory</p>
               </div>
             </div>
@@ -66,11 +71,12 @@ export function Hero() {
         <div className="mt-10 lg:mt-16 grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 lg:ml-auto lg:max-w-[58%] animate-rise animate-rise-4">
           <figure>
             <div className="relative aspect-[4/3] w-full overflow-hidden border border-line bg-bone">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/brand/placeholders/builder-floor-exterior.webp"
                 alt="Builder floor exterior"
-                className="h-full w-full object-cover opacity-80"
+                fill
+                sizes="(min-width: 1024px) 30vw, 50vw"
+                className="object-cover opacity-80"
               />
               <div className="absolute inset-4 border border-paper/70" />
             </div>
@@ -78,11 +84,12 @@ export function Hero() {
           </figure>
           <figure>
             <div className="relative aspect-[4/3] w-full overflow-hidden border border-line bg-bone">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/brand/placeholders/modern-villa-exterior.webp"
                 alt="Premium modern villa exterior"
-                className="h-full w-full object-cover opacity-80"
+                fill
+                sizes="(min-width: 1024px) 30vw, 50vw"
+                className="object-cover opacity-80"
               />
               <div className="absolute bottom-0 left-0 right-0 h-1/2 border-t border-line bg-paper/35" />
             </div>
@@ -93,3 +100,4 @@ export function Hero() {
     </section>
   );
 }
+
