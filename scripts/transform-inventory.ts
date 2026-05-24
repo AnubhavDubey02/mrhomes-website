@@ -280,7 +280,11 @@ function transformRow(row: CRMRow, projectRoot: string): Property | null {
   }
 
   const intent = normaliseIntent(row['ListingIntent'] || 'rent');
-  const rent = (row['Rent'] || '').trim();
+  const rawRent = (row['Rent'] || '').trim();
+  const rent = rawRent
+    .replace(/\s+to\s+/gi, '–')
+    .replace(/\bto\b/gi, '–')
+    .replace(/[\uFFFD\u2013\u2014-]/g, '–');
   const media = resolveMedia(publicRef, projectRoot);
 
   return {

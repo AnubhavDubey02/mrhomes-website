@@ -23,7 +23,7 @@ export function PropertyCard({
   property: Property;
   className?: string;
 }) {
-  const area = LOCATIONS.find((l) => l.slug === property.locationSlug)?.name;
+  const area = LOCATIONS.find((l) => l.slug === property.locationSlug)?.name ?? property.sector;
   const cover = property.images?.[0];
 
   return (
