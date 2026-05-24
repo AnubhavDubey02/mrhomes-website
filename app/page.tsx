@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Hero } from '@/components/sections/Hero';
 import { SmartSearch } from '@/components/sections/SmartSearch';
 import { WhyMrHomes } from '@/components/sections/WhyMrHomes';
@@ -54,7 +55,9 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <Hero />
-      <SmartSearch />
+      <Suspense fallback={<div className="h-24 bg-bone/10 animate-pulse" />}>
+        <SmartSearch />
+      </Suspense>
       <PropertyCategories />
       <AreasWeServe />
       <WhyMrHomes />

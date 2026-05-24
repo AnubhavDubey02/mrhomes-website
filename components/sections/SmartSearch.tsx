@@ -1,19 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container } from '@/components/layout/Container';
 import { LOCATIONS } from '@/lib/locations';
 import { budgetsFor } from '@/lib/budgets';
+import { useSearchParams } from 'next/navigation';
 
-const PROPERTY_TYPES = [
+const BUY_PROPERTY_TYPES = [
   { value: 'apartment', label: 'Apartment' },
   { value: 'builder-floor', label: 'Builder Floor' },
   { value: 'independent-villa', label: 'Independent Villa' },
   { value: 'plot', label: 'Plot' },
   { value: 'commercial', label: 'Commercial' },
-  { value: 'studio', label: 'Studio' },
+];
+
+const RENT_PROPERTY_TYPES = [
   { value: '1-rk', label: '1 RK' },
+  { value: 'studio', label: 'Studio Apartment' },
+  { value: '1-bhk', label: '1 BHK' },
+  { value: '2-bhk', label: '2 BHK' },
+  { value: '3-bhk', label: '3 BHK' },
+  { value: 'builder-floor', label: 'Builder Floor' },
+  { value: 'independent-villa', label: 'Independent Villa' },
   { value: 'pre-occupied-room', label: 'Pre-occupied Room' },
+  { value: 'commercial', label: 'Commercial' },
 ];
 
 const APARTMENT_SUBTYPES = ['1 BHK', '2 BHK', '3 BHK', '4 BHK +'];
@@ -46,8 +56,28 @@ const ROOM_PREFERENCES = [
  * filtering can read every parameter without bespoke client wiring.
  */
 export function SmartSearch() {
-  const [intent, setIntent] = useState<'buy' | 'rent'>('buy');
-  const [type, setType] = useState<string>('');
+  const searchParams = useSearchParams();
+  const urlIntent = (searchParams.get('intent') as 'buy' | 'rent') || 'buy';
+  const rawUrlType = searchParams.get('type') || '';
+
+  const validTypesForUrl = urlIntent === 'buy' ? BUY_PROPERTY_TYPES : RENT_PROPERTY_TYPES;
+  const urlType = validTypesForUrl.some((t) => t.value === rawUrlType) ? rawUrlType : '';
+
+  const [intent, setIntent] = useState<'buy' | 'rent'>(urlIntent);
+  const [type, setType] = useState<string>(urlType);
+
+  useEffect(() => {
+    setIntent(urlIntent);
+    setType(urlType);
+  }, [urlIntent, urlType]);
+
+  const handleIntentChange = (newIntent: 'buy' | 'rent') => {
+    setIntent(newIntent);
+    const validTypes = newIntent === 'buy' ? BUY_PROPERTY_TYPES : RENT_PROPERTY_TYPES;
+    if (type !== '' && !validTypes.some((t) => t.value === type)) {
+      setType('');
+    }
+  };
 
   const showApartmentSub = type === 'apartment';
   const showCommercialSub = type === 'commercial';
@@ -61,14 +91,19 @@ export function SmartSearch() {
   return (
     <section aria-label="Search properties" className="pb-20 md:pb-28">
       <Container>
-        <form method="get" action="/properties" className="border-y border-line">
+        <form
+          key={searchParams.toString()}
+          method="get"
+          action="/properties"
+          className="border-y border-line"
+        >
           {/* Primary row — unchanged in shape */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.1fr_1.3fr_1.3fr_1.2fr_auto]">
             <Field label="Looking to" name="intent">
               <select
                 name="intent"
                 value={intent}
-                onChange={(e) => setIntent(e.target.value as 'buy' | 'rent')}
+                onChange={(e) => handleIntentChange(e.target.value as 'buy' | 'rent')}
                 className={selectCls}
               >
                 <option value="buy">Buy</option>
@@ -84,7 +119,7 @@ export function SmartSearch() {
                 className={selectCls}
               >
                 <option value="">Any</option>
-                {PROPERTY_TYPES.map((t) => (
+                {(intent === 'buy' ? BUY_PROPERTY_TYPES : RENT_PROPERTY_TYPES).map((t) => (
                   <option key={t.value} value={t.value}>
                     {t.label}
                   </option>
@@ -93,7 +128,7 @@ export function SmartSearch() {
             </Field>
 
             <Field label="Area" name="area">
-              <select name="area" defaultValue="" className={selectCls}>
+              <select name="area" defaultValue={searchParams.get('area') || ''} className={selectCls}>
                 <option value="">Any in Gurgaon</option>
                 {LOCATIONS.map((l) => (
                   <option key={l.slug} value={l.slug}>
@@ -104,7 +139,7 @@ export function SmartSearch() {
             </Field>
 
             <Field label="Budget" name="budget">
-              <select name="budget" defaultValue="" className={selectCls}>
+              <select name="budget" defaultValue={searchParams.get('budget') || ''} className={selectCls}>
                 <option value="">Any</option>
                 {BUDGETS.map((b) => (
                   <option key={b.value} value={b.value}>
@@ -134,7 +169,7 @@ export function SmartSearch() {
                 <Field label="Configuration" name="apartmentType">
                   <select
                     name="apartmentType"
-                    defaultValue=""
+                    defaultValue={searchParams.get('apartmentType') || ''}
                     className={selectCls}
                   >
                     <option value="">Any</option>
@@ -151,7 +186,7 @@ export function SmartSearch() {
                 <Field label="Sub-type" name="commercialType">
                   <select
                     name="commercialType"
-                    defaultValue=""
+                    defaultValue={searchParams.get('commercialType') || ''}
                     className={selectCls}
                   >
                     <option value="">Any</option>
@@ -168,7 +203,7 @@ export function SmartSearch() {
                 <Field label="Furnishing" name="furnishing">
                   <select
                     name="furnishing"
-                    defaultValue=""
+                    defaultValue={searchParams.get('furnishing') || ''}
                     className={selectCls}
                   >
                     <option value="">Any</option>
@@ -185,7 +220,7 @@ export function SmartSearch() {
                 <Field label="Room preference" name="roomPreference">
                   <select
                     name="roomPreference"
-                    defaultValue=""
+                    defaultValue={searchParams.get('roomPreference') || ''}
                     className={selectCls}
                   >
                     <option value="">Any</option>

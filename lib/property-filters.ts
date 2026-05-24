@@ -37,9 +37,12 @@ const TYPE_LABELS: Record<string, string> = {
   'independent-villa': 'Independent Villa',
   plot: 'Plot',
   commercial: 'Commercial',
-  studio: 'Studio',
+  studio: 'Studio Apartment',
   '1-rk': '1 RK',
   'pre-occupied-room': 'Pre-occupied Room',
+  '1-bhk': '1 BHK',
+  '2-bhk': '2 BHK',
+  '3-bhk': '3 BHK',
 };
 
 const APARTMENT_LABELS: Record<string, string> = {
@@ -250,6 +253,10 @@ export function filterProperties(f: PropertyFilters): Property[] {
     if (f.type?.value === 'builder-floor' && p.category !== 'builder-floors') return false;
     if (f.type?.value === 'plot' && p.category !== 'plots') return false;
     if (f.type?.value === 'commercial' && p.category !== 'commercial') return false;
+    if (f.type?.value === '1-bhk' && p.category !== '1bhk') return false;
+    if (f.type?.value === '2-bhk' && p.category !== '2bhk') return false;
+    if (f.type?.value === '3-bhk' && p.category !== '3bhk') return false;
+    if (f.type?.value === 'studio' && p.category !== 'studio') return false;
     return true;
   });
 }
