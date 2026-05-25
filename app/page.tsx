@@ -5,6 +5,8 @@ import { WhyMrHomes } from '@/components/sections/WhyMrHomes';
 import { RequirementEngine } from '@/components/sections/RequirementEngine';
 import { PropertyCategories } from '@/components/sections/PropertyCategories';
 import { AreasWeServe } from '@/components/sections/AreasWeServe';
+import { Section } from '@/components/layout/Container';
+import { LeadForm } from '@/components/lead/LeadForm';
 import { BUSINESS } from '@/lib/business';
 
 export default function HomePage() {
@@ -55,6 +57,9 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <Hero />
+      <Section className="py-12 md:py-16 border-t border-line bg-paper/50">
+        <LeadForm formSource="homepage" />
+      </Section>
       <Suspense fallback={<div className="h-24 bg-bone/10 animate-pulse" />}>
         <SmartSearch />
       </Suspense>

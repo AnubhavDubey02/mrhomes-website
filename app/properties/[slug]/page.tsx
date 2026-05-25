@@ -5,8 +5,8 @@ import { getProperty, PROPERTIES, type Property } from '@/lib/properties';
 import { buildMetadata } from '@/lib/seo';
 import { telLink } from '@/lib/business';
 import { whatsappLink } from '@/lib/whatsapp';
-
 import { ShareButton } from '@/components/ui/ShareButton';
+import { LeadForm } from '@/components/lead/LeadForm';
 
 export function generateStaticParams() {
   return PROPERTIES.map((p) => ({ slug: p.slug }));
@@ -211,6 +211,24 @@ ${property.type} | ${property.sector} | ${property.rent}.`;
         ))}
       </dl>
 
+      <div className="mt-16 border-t border-line pt-16">
+        <div className="mb-10 max-w-prose">
+          <p className="eyebrow text-ink">Inquire About This Property</p>
+          <h2 className="font-display text-display-md mt-4">Request Information</h2>
+          <p className="mt-4 text-muted">
+            Interested in this property? Fill out your details below to get verified options matching this profile.
+          </p>
+        </div>
+        <LeadForm
+          compact
+          defaultIntent={property.intent === 'rent' || property.intent === 'buy' ? property.intent : 'buy'}
+          defaultType={mapCategoryToType(property.category, property.intent)}
+          defaultArea={property.sector}
+          defaultBudget={mapBudgetToOption(property.priceLabel, property.intent)}
+          formSource="property_detail"
+        />
+      </div>
+
       {related.length > 0 && (
         <div className="mt-16">
           <p className="eyebrow">Similar Properties</p>
@@ -247,6 +265,62 @@ ${property.type} | ${property.sector} | ${property.rent}.`;
       </div>
     </Section>
   );
+}
+
+function mapCategoryToType(cat: string, intent: string): string {
+  const c = cat.toLowerCase();
+  if (intent === 'rent') {
+    if (c === '1bhk') return '1-bhk';
+    if (c === '2bhk') return '2-bhk';
+    if (c === '3bhk') return '3-bhk';
+  } else {
+    if (c.includes('bhk')) return 'apartment';
+  }
+  if (c === '1rk') return '1-rk';
+  if (c === 'pre-occupied-rooms') return 'pre-occupied-room';
+  if (c === 'villas' || c === 'villas-airbnb') return 'independent-villa';
+  if (c === 'builder-floors') return 'builder-floor';
+  if (c === 'plots') return 'plot';
+  if (c === 'commercial') return 'commercial';
+  return '';
+}
+
+function mapBudgetToOption(priceLabel: string, intent: string): string {
+  const normalized = priceLabel.toLowerCase().replace(/,/g, '');
+  const match = normalized.match(/(\d+(?:\.\d+)?)/);
+  if (!match) return '';
+  const value = Number(match[1]);
+
+  if (intent === 'rent') {
+    let rentInK = value;
+    if (normalized.includes('l')) {
+      rentInK = value * 100;
+    }
+    if (rentInK < 20) return 'under-20k';
+    if (rentInK <= 30) return '20k-30k';
+    if (rentInK <= 40) return '30k-40k';
+    if (rentInK <= 60) return '40k-60k';
+    if (rentInK <= 100) return '60k-1-l';
+    return '1-l-';
+  } else {
+    let priceInCr = value;
+    if (normalized.includes('l') && !normalized.includes('lakh')) {
+      priceInCr = value / 100;
+    } else if (normalized.includes('cr')) {
+      priceInCr = value;
+    } else if (value >= 10000000) {
+      priceInCr = value / 10000000;
+    } else if (value >= 100000) {
+      priceInCr = value / 100000 / 100;
+    }
+    
+    if (priceInCr < 0.5) return 'under-50-l';
+    if (priceInCr <= 1.0) return '50-l-1-cr';
+    if (priceInCr <= 2.0) return '1-2-cr';
+    if (priceInCr <= 5.0) return '2-5-cr';
+    if (priceInCr <= 10.0) return '5-10-cr';
+    return '10-cr-';
+  }
 }
 
 function similarProperties(property: Property) {
