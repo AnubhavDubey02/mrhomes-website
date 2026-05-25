@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -83,14 +84,13 @@ export function Logo({ className }: { className?: string }) {
               flexShrink: 0,
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={mobileSrc}
               alt=""
-              width={mobileCanvasW}
-              height={mobileCanvasH}
+              width={SYMBOL_CANVAS_W}
+              height={SYMBOL_CANVAS_H}
               style={{
-                width: mobileCanvasW,
+                width: 'auto',
                 height: mobileCanvasH,
                 marginTop: -mobileTopOffset,
                 marginLeft: -mobileLeftOffset,
